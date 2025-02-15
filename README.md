@@ -53,7 +53,7 @@ def busqueda_lineal(lista, objetivo):
     for usuario in lista:
         if usuario.id == objetivo:
             return usuario.nombre
-    return None
+    return -1
 ```
 
 #### 2️⃣ **Búsqueda Binaria** (O(log n))
@@ -69,7 +69,23 @@ def busqueda_binaria(lista, objetivo):
             izquierda = medio + 1
         else:
             derecha = medio - 1
-    return None
+    return -1
+```
+
+#### 🔹 Manejo de Resultados con if
+Después de ejecutar la búsqueda, verificamos si el usuario fue encontrado usando if nombre_lineal != -1: y if nombre_binaria != -1:.Esto se debe a que nuestras funciones de búsqueda devuelven:
+*El nombre del usuario si el ID existe en la lista. 
+*-1 si el ID no se encuentra.
+```python
+if nombre_lineal != -1:
+    print(f"Usuario encontrado con búsqueda lineal: {nombre_lineal}")
+else:
+    print("Usuario no encontrado con búsqueda lineal.")
+
+if nombre_binaria != -1:
+    print(f"Usuario encontrado con búsqueda binaria: {nombre_binaria}")
+else:
+    print("Usuario no encontrado con búsqueda binaria.")
 ```
 
 ### 🔹 Comparación de Tiempos
